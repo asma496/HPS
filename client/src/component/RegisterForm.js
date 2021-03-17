@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, axios } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import Typography from "@material-ui/core/Typography";
 import Grid from "@material-ui/core/Grid";
@@ -12,9 +12,9 @@ import FormGroup from "@material-ui/core/FormGroup";
 import MenuItem from "@material-ui/core/MenuItem";
 import Radio from "@material-ui/core/Radio";
 import Checkbox from "@material-ui/core/Checkbox";
-import NumberFormat from "react-number-format";
 import RadioGroup from "@material-ui/core/RadioGroup";
 import AppBar from "./GlobalHeader";
+import NumberFormat from 'react-number-format';
 
 const RegisterForm = ({
   registrationFormData,
@@ -93,6 +93,18 @@ const RegisterForm = ({
   //   console.log(registrationFormData);
   //   // next();
   // };
+  // const handleSubmit = async (e) => {
+  //   // validate();
+  //   e.preventDefault();
+  //   setRegistrationFormData(e.target.value);
+  //   //  validateI();
+  //   //console.log("not" + err)
+  //   console.log( registrationFormData);
+
+  //   const res = await axios.post("http://localhost:4000/api/registration",  registrationFormData)
+  //   console.log(res);
+
+  // }
   const handleOption = (val) => {
     if (val == "islam") {
       setOptions([
@@ -124,15 +136,16 @@ const RegisterForm = ({
         <form className={classes.root} noValidate autoComplete="off">
           <Grid container spacing={2}>
             <Grid item md={4} sm={12} lg={3}>
-              <TextField
+            <NumberFormat format="#### #### #### ####" mask="_"
+
                 value={registrationFormData.MRNo}
                 id="MRNo"
                 label="Your MR #"
                 fullWidth
-                type="number"
-                InputLabelProps={{
-                  shrink: true,
-                }}
+               
+                // InputLabelProps={{
+                //   shrink: true,
+                // }}
                 variant="outlined"
               />
             </Grid>

@@ -13,13 +13,13 @@ const RegisSchema = mongoose.Schema({
         type: String,
         required: [true, "Name is required"]
     },
-    FatherName: {
+    FatherOrHusband: {
         type: String,
-        required: [true, "fatherName is required"]
+        required: [true, "FatherOrHusband is required"]
     },
     DOB: {
-        type: new Date(),
-        required: [true, "D.O.B is required"]
+        type: Date,
+         default: Date.now
     },
     Gender: {
         type: String,
@@ -35,7 +35,7 @@ const RegisSchema = mongoose.Schema({
     },
     District: {
         type: String,
-        required: [true, "CNIC is required"]
+        required: [true, " District is required"]
     },
     CNIC: {
         type: Number,
@@ -47,7 +47,7 @@ const RegisSchema = mongoose.Schema({
     },
     Mobile: {
         type: String,
-        required: [true, "CNIC is required"]
+        required: [true, "PhoneNo is required"]
     },
     OffPhone: {
         type: String,
@@ -55,47 +55,47 @@ const RegisSchema = mongoose.Schema({
     },
     RefBy: {
         type: String,
-        required: [true, "CNIC is required"]
+        required: [true, "OffPhone is required"]
     },
     Remarks: {
         type: String,
         required: [true, "CNIC is required"]
     },
     IsRejected: {
-        required: [false, "CNIC is required"]
+        required: [false, "Remarks is required"]
     },
     IsZakat: {
         type: String,
-        required: [true, "CNIC is required"]
+        required: [true, "IsZakat is required"]
     },
     IsPAFEmp: {
-        required: [false, "CNIC is required"]
+        required: [false, "IsPAFEmp is required"]
     },
     RefBy: {
         type: String,
-        required: [true, "CNIC is required"]
+        required: [true, "RefBy is required"]
     },
     MonthlyConsLimit: {
         type: Number,
-        required: [true, "CNIC is required"]
+        required: [true, "MonthlyConsLimit is required"]
     },
     NOY: {
         type: String,
-        required: [true, "CNIC is required"]
+        required: [true, "NOY is required"]
     },
     EmpId: {
         type: Number,
-        required: [true, "CNIC is required"]
+        required: [true, "EmpId is required"]
     },
     IsStaff: {
         type: String,
-        required: [true, "CNIC is required"]
+        required: [true, "IsStaff is required"]
     },
     CreateUser: '',
     ModifyUser:'',
     ModifyDate: {
         type: String,
-        required: [true, "CNIC is required"]
+        required: [true, "ModifyDate is required"]
     },
     createdAt: {
         type: Date,

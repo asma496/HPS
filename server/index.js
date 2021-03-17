@@ -1,12 +1,11 @@
 const express = require('express');
 const path = require('path');
 const bodyParser = require('body-parser');
-// app.use(bodyParser.urlencoded({extended:true}));
 const dbConnect = require('./config/db.js');
 var cors = require('cors')
 const registrationRoute = require("./routes/api/registration.js");
-const welfareRoute = require("./routes/api/welfare.js");
-const serviceRoute = require("./routes/api/service.js");
+// const welfareRoute = require("./routes/api/welfare.js");
+// const serviceRoute = require("./routes/api/service.js");
 const app = express();
 app.use(cors())
 const dotenv = require('dotenv')
@@ -24,8 +23,8 @@ console.log('server is running at', PORT)
 
 ///Routes
 app.use("/api/registration", registrationRoute);
-app.use("/api/welfare", welfareRoute);
-app.use("/api/service", serviceRoute);
+// app.use("/api/welfare", welfareRoute);
+// app.use("/api/service", serviceRoute);
 
 
 
