@@ -18,7 +18,8 @@ router.post('/add', async (req, res) => {
         res.json({
             success: true,
             status: 201,
-            dbid: register._id
+            dbid: register._id,
+            data:register
         })
 
     } catch (error) {

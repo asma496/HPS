@@ -10,8 +10,8 @@ const app = express();
 app.use(cors())
 const dotenv = require('dotenv')
 dotenv.config();
-app.use(bodyParser.urlencoded({ extended: true }));
-app.use(bodyParser.json());
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
 
 const PORT = process.env.PORT || 4000
 ///connect to db
